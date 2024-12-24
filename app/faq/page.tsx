@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Search, ChevronRight, ChevronDown,
+  Search, ChevronDown,
   DollarSign, Clock, Shield, AlertTriangle,
-  Calendar, FileText, Bug, MousePointer,
-  Sparkles, Phone, Mail, MessageSquare,
+  Calendar, FileText, Bug, Phone, Mail, MessageSquare,
   CheckCircle2
 } from 'lucide-react';
 
