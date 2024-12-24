@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import {
-  Shield, CheckCircle2, Clock, Zap,
-  ChevronRight, AlertCircle, Users, Building2,
-  Factory, Store, Home, Building,
-  Warehouse, School, Hospital, UtensilsCrossed,
+  Shield, CheckCircle2,
+  ChevronRight,
+  Factory, Store, Building,
+   Hospital, 
   Bug, MousePointer, Sparkles, Microscope,
   ClipboardCheck, Calendar, Award, ThumbsUp
 } from 'lucide-react';

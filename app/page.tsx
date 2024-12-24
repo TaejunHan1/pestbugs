@@ -5,12 +5,10 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Wrench, ArrowRight, ChevronRight, Activity, Package2,
-  PlusCircle, MinusCircle, CheckCircle2, Award, 
-  Shield, Users, Star, Phone, Mail, Clock,
-  MapPin, TrendingUp, AlertTriangle, Zap,
-  Truck, Settings, Download, Bug, 
-  MousePointer, BugOff, Sparkles, Target,
+  Wrench, ArrowRight, ChevronRight, Activity, Package2, CheckCircle2, Award, 
+  Shield, Users, Star, Phone,  Zap,
+  Bug, 
+  MousePointer, Sparkles, Target,
   Factory,
   Store,
   Warehouse
