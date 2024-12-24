@@ -253,7 +253,7 @@ export default function FAQ() {
               <h3 className="font-semibold mb-2">이메일 문의</h3>
               <p className="text-gray-600 mb-4">
                 24시간 접수 가능<br />
-                contact@pestking.com
+                lgg0708@naver.com
               </p>
               <button className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
                 메일 보내기

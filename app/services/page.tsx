@@ -26,68 +26,54 @@ export default function Services() {
   ];
 
   // 서비스 데이터
-  const services = [
-    {
-      id: 1,
-      category: 'pest',
-      title: '일반 해충 방제',
-      description: '바퀴벌레, 개미 등 일반 해충에 대한 전문적인 방제 서비스',
-      features: [
-        '첨단 약제 사용',
-        '친환경 시공',
-        '정기적 모니터링',
-        '재발 방지 관리'
-      ],
-      targets: ['주거시설', '상업시설', '식품제조시설'],
-      image: '/service1.jpg',
-      benefits: [
-        '해충 완전 퇴치',
-        '위생적인 환경 조성',
-        '거주자 건강 보호',
-        'HACCP 기준 충족'
-      ]
-    },
-    {
-      id: 2,
-      category: 'rodent',
-      title: '쥐 방제 서비스',
-      description: '최신 장비와 전문 기술을 활용한 효과적인 쥐 방제',
-      features: [
-        '무독성 방제',
-        '진입로 차단',
-        '지속적 모니터링',
-        '예방 관리'
-      ],
-      targets: ['창고', '식품공장', '주택'],
-      image: '/service2.jpg',
-      benefits: [
-        '재산 피해 방지',
-        '질병 예방',
-        '위생 환경 개선',
-        '식품 안전 확보'
-      ]
-    },
-    {
-      id: 3,
-      category: 'sanitize',
-      title: '전문 살균 소독',
-      description: '바이러스와 세균을 박멸하는 전문 살균 소독 서비스',
-      features: [
-        'WHO 승인 약제',
-        '무인 분무 시스템',
-        '잔류성 확보',
-        '공간 전체 소독'
-      ],
-      targets: ['병원', '학교', '사무실'],
-      image: '/service3.jpg',
-      benefits: [
-        '감염병 예방',
-        '실내 공기질 개선',
-        '악취 제거',
-        '위생 인증 획득'
-      ]
-    }
-  ];
+// 서비스 섹션의 이미지도 수정
+const services = [
+  {
+    id: 1,
+    category: 'pest',
+    title: '일반 해충 방제',
+    description: '바퀴벌레, 개미 등 일반 해충에 대한 전문적인 방제 서비스',
+    features: [
+      '첨단 약제 사용',
+      '친환경 시공',
+      '정기적 모니터링',
+      '재발 방지 관리'
+    ],
+    targets: ['주거시설', '상업시설', '식품제조시설'],
+    image: "/api/placeholder/500/300", // placeholder 이미지로 변경
+    Icon: Bug // 아이콘 추가
+  },
+  {
+    id: 2,
+    category: 'rodent',
+    title: '쥐 방제 서비스',
+    description: '최신 장비와 전문 기술을 활용한 효과적인 쥐 방제',
+    features: [
+      '무독성 방제',
+      '진입로 차단',
+      '지속적 모니터링',
+      '예방 관리'
+    ],
+    targets: ['창고', '식품공장', '주택'],
+    image: "/api/placeholder/500/300", // placeholder 이미지로 변경
+    Icon: MousePointer // 아이콘 추가
+  },
+  {
+    id: 3,
+    category: 'sanitize',
+    title: '전문 살균 소독',
+    description: '바이러스와 세균을 박멸하는 전문 살균 소독 서비스',
+    features: [
+      'WHO 승인 약제',
+      '무인 분무 시스템',
+      '잔류성 확보',
+      '공간 전체 소독'
+    ],
+    targets: ['병원', '학교', '사무실'],
+    image: "/api/placeholder/500/300", // placeholder 이미지로 변경
+    Icon: Sparkles // 아이콘 추가
+  }
+];
 
   // FAQ 데이터
   const faqs = [
@@ -192,66 +178,61 @@ export default function Services() {
             })}
           </div>
 
-          {/* Service Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services
-              .filter(service => activeTab === 'all' || service.category === activeTab)
-              .map((service) => (
-                <motion.div
-                  key={service.id}
-                  whileHover={{ y: -8 }}
-                  className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all"
-                >
-                  <div className="relative h-48">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      className="rounded-t-xl"
-                    />
+       {/* Service Cards */}
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {services
+    .filter(service => activeTab === 'all' || service.category === activeTab)
+    .map((service) => (
+      <motion.div
+        key={service.id}
+        whileHover={{ y: -8 }}
+        className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all"
+      >
+        {/* Image 부분을 아이콘으로 변경 */}
+        <div className="relative h-48 bg-gray-100 flex items-center justify-center rounded-t-xl">
+          <service.Icon className="w-24 h-24 text-gray-400" />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+          <p className="text-gray-600 mb-4">{service.description}</p>
+          
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-medium mb-2">주요 특징</h4>
+              <div className="grid grid-cols-2 gap-2">
+                {service.features.map((feature, idx) => (
+                  <div key={idx} className="flex items-center text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-green-500 mr-2" />
+                    <span>{feature}</span>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-                    <p className="text-gray-600 mb-4">{service.description}</p>
-                    
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-medium mb-2">주요 특징</h4>
-                        <div className="grid grid-cols-2 gap-2">
-                          {service.features.map((feature, idx) => (
-                            <div key={idx} className="flex items-center text-sm">
-                              <CheckCircle2 className="w-4 h-4 text-green-500 mr-2" />
-                              <span>{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                ))}
+              </div>
+            </div>
 
-                      <div>
-                        <h4 className="font-medium mb-2">적용 시설</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {service.targets.map((target, idx) => (
-                            <span
-                              key={idx}
-                              className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
-                            >
-                              {target}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+            <div>
+              <h4 className="font-medium mb-2">적용 시설</h4>
+              <div className="flex flex-wrap gap-2">
+                {service.targets.map((target, idx) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
+                  >
+                    {target}
+                  </span>
+                ))}
+              </div>
+            </div>
 
-                      <div className="pt-4 border-t">
-                        <button className="w-full py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium">
-                          상세 견적 문의
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="pt-4 border-t">
+              <button className="w-full py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium">
+                상세 견적 문의
+              </button>
+            </div>
           </div>
+        </div>
+      </motion.div>
+    ))}
+</div>
         </div>
       </section>
 

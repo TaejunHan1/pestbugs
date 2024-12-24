@@ -10,7 +10,10 @@ import {
   Shield, Users, Star, Phone, Mail, Clock,
   MapPin, TrendingUp, AlertTriangle, Zap,
   Truck, Settings, Download, Bug, 
-  MousePointer, BugOff, Sparkles, Target
+  MousePointer, BugOff, Sparkles, Target,
+  Factory,
+  Store,
+  Warehouse
 } from "lucide-react";
 
 export default function Home() {
@@ -113,7 +116,7 @@ export default function Home() {
       challenge: "지속적인 쥐 침입 문제로 위생 관리에 어려움을 겪음",
       solution: "개선형 쥐터널 20개소 설치 및 돌모양 쥐먹이 상자 15개소 배치",
       result: "설치 후 6개월 내 완전 퇴치 달성, HACCP 인증 평가 통과",
-      image: "/case1.jpg",
+      Icon: Factory, // 아이콘으로 변경
       testimonial: "방역쟁이의 제품은 타사 제품과 확실히 다른 효과를 보여줬습니다."
     },
     {
@@ -122,7 +125,7 @@ export default function Home() {
       challenge: "넓은 공간의 해충 개체 수 증가로 어려움",
       solution: "신형 포충등 시스템 구축 및 주기적 모니터링",
       result: "해충 개체 수 90% 감소, 위생 점검 A등급 획득",
-      image: "/case2.jpg",
+      Icon: Warehouse, // 아이콘으로 변경
       testimonial: "효과적인 방제 시스템 덕분에 깨끗한 환경을 유지할 수 있게 되었습니다."
     },
     {
@@ -131,7 +134,7 @@ export default function Home() {
       challenge: "매장 내 바퀴벌레 출현으로 고객 컴플레인 발생",
       solution: "바퀴겔칼 및 모니터링 시스템 도입",
       result: "3개월 내 완전 퇴치, 고객 만족도 상승",
-      image: "/case3.jpg",
+      Icon: Store, // 아이콘으로 변경
       testimonial: "전문적이고 체계적인 방제 솔루션에 매우 만족합니다."
     }
   ];
@@ -274,7 +277,7 @@ export default function Home() {
                   <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
-              <Link href="mailto:contact@pestking.com">
+              <Link href="mailto:lgg0708@naver.com">
                 <motion.button
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
@@ -431,20 +434,15 @@ export default function Home() {
         <div className="max-w-[1140px] mx-auto px-6">
           <h2 className="text-3xl font-bold text-gray-900 mb-12">고객 성공 사례</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {successStories.map((story, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -10 }}
-                className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all"
-              >
-                <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
-                  <Image
-                    src={story.image}
-                    alt={story.client}
-                    fill
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
+          {successStories.map((story, index) => (
+  <motion.div
+    key={index}
+    whileHover={{ y: -10 }}
+    className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all"
+  >
+    <div className="relative h-48 mb-6 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center">
+      <story.Icon className="w-24 h-24 text-gray-400" />
+    </div>
                 <div className="space-y-4">
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-1">
