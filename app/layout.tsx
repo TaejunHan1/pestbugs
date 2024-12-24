@@ -105,18 +105,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </div>
             <div className="flex items-center space-x-4">
               <a
-                href="tel:1588-1234"
+                href="tel:010-5426-1889"
                 className="flex items-center hover:text-green-300 transition-colors"
               >
                 <Phone className="w-4 h-4 mr-1" />
-                <span>1588-1234</span>
+                <span>010-5426-1889</span>
               </a>
               <a
-                href="mailto:contact@pestking.com"
+                href="mailto:lgg0708@naver.com"
                 className="flex items-center hover:text-green-300 transition-colors"
               >
                 <Mail className="w-4 h-4 mr-1" />
-                <span>contact@pestking.com</span>
+                <span>lgg0708@naver.com</span>
               </a>
             </div>
           </div>
@@ -260,11 +260,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <div className="space-y-4 text-sm text-gray-400">
                   <p className="flex items-center">
                     <Phone className="w-4 h-4 mr-2" />
-                    <span>1588-1234</span>
+                    <span>010-5426-1889</span>
                   </p>
                   <p className="flex items-center">
                     <Mail className="w-4 h-4 mr-2" />
-                    <span>contact@pestking.com</span>
+                    <span>lgg0708@naver.com</span>
                   </p>
                   <p className="flex items-center">
                     <MapPin className="w-4 h-4 mr-2" />

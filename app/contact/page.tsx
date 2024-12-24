@@ -64,7 +64,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: '이메일',
-      content: 'contact@pestking.com',
+      content: 'lgg0708@naver.com',
       description: '24시간 접수 가능'
     },
     {
